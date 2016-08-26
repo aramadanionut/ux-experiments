@@ -1,0 +1,37 @@
+.footer-nav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    .separator {
+        color: #d8d8d8;
+    }
+    a {
+        padding: 6px 12px;
+        font-family: Roboto, sans-serif;
+        text-transform: uppercase;
+        color: #b1b1b1;
+        font-size: 12px;
+        font-weight: bold;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 15px;
+        text-decoration: none;
+        &:hover {
+            color: #505050;
+        }
+        &.active {
+            color: #33b9b9;
+        }
+        &.home {
+            margin-right: 25px;
+            &:hover {
+                border-color: transparent;
+            }
+        }
+    }
+}

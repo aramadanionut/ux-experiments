@@ -1,0 +1,41 @@
+$activeColor: #33b9b9;
+
+.home {
+    .header {
+        padding: 30px 0;
+        .title {
+            margin: 0;
+            font-family: Roboto;
+            color: #3c3c3c;
+            font-size: 36px;
+        }
+        .subtitle {
+            margin: 0;
+            font-family: 'Roboto Slab';
+            color: #ffabab;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+    }
+    .experiment-links {
+        margin-top: 50px;
+        .experiment-link {
+            font-family: Roboto;
+            font-weight: 500;
+            color: #99c6ce;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 4px;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+            &:hover {
+                color: $activeColor;
+                border-color: #9ee6e6;
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+html {
+    height: 100%;
+    font-family: Roboto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background: #fff;
+}
+
+*, *:before, *:after {
+    font-family: Roboto;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.marginTop {
+    margin-top: 15px;
+}
+
+.marginLeft {
+    margin-left: 15px;
+}
+
+.marginRight {
+    margin-right: 15px;
+}
+
+.marginBottom {
+    margin-bottom: 15px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.noPad {
+    padding: 0;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.full {
+    width: 100%;
+    max-width: 100%;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    table-layout: auto;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none !important;
+}
