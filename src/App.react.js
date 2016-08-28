@@ -4,7 +4,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 // Experiments
 import Main from './Main.react.js';
-import Index from './Home.react.js';
+import Home from './Home.react.js';
 import Article from './Article.react';
 import Demo from './Demo.react';
 
@@ -34,7 +34,7 @@ export default class App extends React.Component {
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={Main}>
-                    <IndexRoute component={wrapWithDefaultProps(this.state.articles, Index)} />
+                    <IndexRoute component={wrapWithDefaultProps(this.state.articles, Home)} />
 
                     <Route path="demo">
                         <Route path=":user/:experimentTitle" component={wrapWithDefaultProps(this.state.articles, Demo)} />

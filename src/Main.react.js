@@ -1,6 +1,7 @@
 // Libs
 import React from 'react';
 import {Link, IndexLink } from 'react-router';
+import classNames from 'classnames';
 
 // Define and export component
 export default class Main extends React.Component {
@@ -13,17 +14,29 @@ export default class Main extends React.Component {
 
             userSwitcher = (
                 <nav className="footer-nav">
-                    <IndexLink to='/' className="menu-item" activeClassName="active">Home</IndexLink>
+                    <div className="menu">
+                        <IndexLink to='/' className="menu-item" activeClassName="active">Home</IndexLink>
 
-                    <Link to={`/article/${this.props.params.user}/${this.props.params.experimentTitle}`}
-                          className="menu-item" activeClassName="active">Article</Link>
+                        <Link to={`/article/${this.props.params.user}/${this.props.params.experimentTitle}`}
+                              className="menu-item" activeClassName="active">Article</Link>
 
-                    <Link to={`/demo/${this.props.params.user}/${this.props.params.experimentTitle}`}
-                          className="menu-item" activeClassName="active">Demo</Link>
+                        <span className="separator">/</span>
+
+                        <Link to={`/demo/${this.props.params.user}/${this.props.params.experimentTitle}`}
+                              className="menu-item" activeClassName="active">Demo</Link>
+                    </div>
 
                     <div className="switcher">
                         <Link to={`/${parentRoute}/dan/${this.props.params.experimentTitle}`} activeClassName="active">dan</Link>
-                        <span className="separator">/</span>
+
+                        <div className="avatar-wrapper">
+                            <div className={classNames("avatar", "avatar-left", {"active": this.props.params.user === 'dan'})} 
+                                 style={{backgroundImage: 'url("http://localhost:3000/assets/img/avatar_dan.jpg")'}}></div>
+
+                            <div className={classNames("avatar", "avatar-right", {"active": this.props.params.user === 'edy'})}
+                                 style={{backgroundImage: 'url("http://localhost:3000/assets/img/avatar_edy.jpg")'}}></div>
+                        </div>
+
                         <Link to={`/${parentRoute}/edy/${this.props.params.experimentTitle}`} activeClassName="active">edy</Link>
                     </div>
                 </nav>
