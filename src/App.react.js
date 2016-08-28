@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 
 // Experiments
 import Main from './Main.react.js';
@@ -37,7 +37,7 @@ export default class App extends React.Component {
         }
 
         return (
-            <Router history={browserHistory}>
+            <Router history={hashHistory}>
                 <Route path="/" component={Main}>
                     <IndexRoute component={wrapWithDefaultProps(this.state.articles, Home)} />
 
