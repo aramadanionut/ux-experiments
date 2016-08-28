@@ -8,8 +8,13 @@ import Home from './Home.react.js';
 import Article from './Article.react';
 import Demo from './Demo.react';
 
+const IS_DEV = window.location.hostname === 'localhost';
+const URL_PREFIX = IS_DEV ? '': '/ux-experiments';
+
 var wrapWithDefaultProps = (data, Component) =>  {
-    return (props) => <Component articles={data} {...props} />
+    return (props) => (
+        <Component articles={data} urlPrefix={URL_PREFIX} {...props} />
+    );
 };
 
 // Define and export component
@@ -21,7 +26,7 @@ export default class App extends React.Component {
     }
 
     componentWillMount() {
-        fetch('/data/data.json')
+        fetch(URL_PREFIX + '/data/data.json')
             .then(response => response.json())
             .then(data => this.setState({ articles: data.articles }));
     }

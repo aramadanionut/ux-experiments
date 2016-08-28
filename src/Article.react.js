@@ -19,7 +19,7 @@ export default class Article extends React.Component {
     }
 
     _fetchData(user, experimentTitle) {
-        return fetch(`/data/articles/${user}_${experimentTitle}.md`)
+        return fetch(this.props.urlPrefix + `/data/articles/${user}_${experimentTitle}.md`)
             .then(response => response.text())
             .then(content => this.setState({ content }));
     }
