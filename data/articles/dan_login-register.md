@@ -1,4 +1,5 @@
-# An experiment on user authentication (Dan)
+# An experiment on user authentication
+#### posted by Dan
 
 "How it was exactly," continued the one-armed commander, "I do not know; but in biting the line, it got foul of his teeth,
 caught there somehow; but we didn't know it
