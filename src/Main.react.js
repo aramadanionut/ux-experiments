@@ -8,15 +8,24 @@ export default class Main extends React.Component {
         let userSwitcher;
 
         if (this.props.location.pathname !== '/') {
-            let routeParts = this.props.location.pathname.split('/');
-            let currentRoute = routeParts.splice(2, routeParts.length).join('/');
+            let routeParts = this.props.location.pathname.split('/').filter(item => !!item);
+            let parentRoute = routeParts.splice(0, 1);
 
             userSwitcher = (
                 <nav className="footer-nav">
-                    <IndexLink to='/' className="home" activeClassName="active">Home</IndexLink>
-                    <Link to={`/dan/${currentRoute}`} activeClassName="active">dan</Link>
-                    <span className="separator">/</span>
-                    <Link to={`/edy/${currentRoute}`} activeClassName="active">edy</Link>
+                    <IndexLink to='/' className="menu-item" activeClassName="active">Home</IndexLink>
+
+                    <Link to={`/article/${this.props.params.user}/${this.props.params.experimentTitle}`}
+                          className="menu-item" activeClassName="active">Article</Link>
+
+                    <Link to={`/demo/${this.props.params.user}/${this.props.params.experimentTitle}`}
+                          className="menu-item" activeClassName="active">Demo</Link>
+
+                    <div className="switcher">
+                        <Link to={`/${parentRoute}/dan/${this.props.params.experimentTitle}`} activeClassName="active">dan</Link>
+                        <span className="separator">/</span>
+                        <Link to={`/${parentRoute}/edy/${this.props.params.experimentTitle}`} activeClassName="active">edy</Link>
+                    </div>
                 </nav>
             );
         }

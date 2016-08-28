@@ -2,6 +2,6 @@ import Dan from './dan';
 import Edy from './edy';
 
 export default {
-    Dan: Dan,
-    Edy: Edy
+    dan: Dan,
+    edy: Edy
 }

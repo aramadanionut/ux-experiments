@@ -5,17 +5,44 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 // Experiments
 import Main from './Main.react.js';
 import Index from './Home.react.js';
-import UXE from './experiments';
+import Article from './Article.react';
+import Demo from './Demo.react';
+
+var wrapWithDefaultProps = (data, Component) =>  {
+    return (props) => <Component articles={data} {...props} />
+};
 
 // Define and export component
 export default class App extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {};
+    }
+
+    componentWillMount() {
+        fetch('/data/data.json')
+            .then(response => response.json())
+            .then(data => this.setState({ articles: data.articles }));
+    }
+
     render() {
+        if (!this.state.articles) {
+            return <p>loading...</p>
+        }
+
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={Main}>
-                    <IndexRoute component={Index} />
-                    <Route path="/dan/login-register" component={UXE.Dan.LoginRegister} />
-                    <Route path="/edy/login-register" component={UXE.Edy.LoginRegister} />
+                    <IndexRoute component={wrapWithDefaultProps(this.state.articles, Index)} />
+
+                    <Route path="demo">
+                        <Route path=":user/:experimentTitle" component={wrapWithDefaultProps(this.state.articles, Demo)} />
+                    </Route>
+
+                    <Route path="article">
+                        <Route path=":user/:experimentTitle" component={wrapWithDefaultProps(this.state.articles, Article)} />
+                    </Route>
                 </Route>
             </Router>
         )

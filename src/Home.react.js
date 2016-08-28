@@ -7,7 +7,23 @@ import Column from './components/Column.react';
 
 // Define and export component
 export default class Index extends React.Component {
+    constructor() {
+        super();
+        this.state = {};
+    }
+
     render() {
+        var links = this.props.articles && this.props.articles.map((article) => {
+            return (
+                <Link to={`/article/dan/${article.slug}`}
+                      key={article.slug}
+                      className="experiment-link"
+                      activeClassName="active">
+                    {article.label}
+                </Link>
+            );
+        });
+
         return (
             <div className="home">
                 <div className="row">
@@ -22,11 +38,7 @@ export default class Index extends React.Component {
                 <div className="row">
                     <Column medium="12">
                         <div className="experiment-links">
-                            <Link to="/dan/login-register"
-                                  className="experiment-link"
-                                  activeClassName="active">
-                                Login/Register Form
-                            </Link>
+                            {links}
                         </div>
                     </Column>
                 </div>

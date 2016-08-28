@@ -3,6 +3,11 @@
 @import 'common/variables';
 @import 'common/footer-nav';
 @import 'common/home';
+@import 'common/md-styles';
+@import 'common/article';
+
+// Code highlighting
+@import 'solarized-dark';
 
 // User specific SCSS
 @import 'dan/app';

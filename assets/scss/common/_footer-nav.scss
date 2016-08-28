@@ -1,10 +1,19 @@
 .footer-nav {
+    width: 100%;
+    background: #fff;
     position: fixed;
-    bottom: 20px;
+    bottom: 0px;
     right: 20px;
+    padding: 20px 40px;
+
     .separator {
         color: #d8d8d8;
     }
+
+    .switcher {
+        float: right;
+    }
+
     a {
         padding: 6px 12px;
         font-family: Roboto, sans-serif;
@@ -24,11 +33,14 @@
         &:hover {
             color: #505050;
         }
+
         &.active {
             color: #33b9b9;
         }
-        &.home {
+
+        &.menu-item {
             margin-right: 25px;
+
             &:hover {
                 border-color: transparent;
             }

@@ -1,0 +1,9 @@
+{
+  "articles": [
+    {
+      "label": "Login/Register Form",
+      "component": "LoginRegister",
+      "slug": "login-register"
+    }
+  ]
+}
