@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && gulp copy:css copy:data prefix",
+    "build": "react-scripts build && gulp copy:css copy:images copy:data prefix",
     "eject": "react-scripts eject",
     "style": "gulp"
   },

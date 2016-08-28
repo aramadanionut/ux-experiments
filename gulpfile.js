@@ -23,6 +23,11 @@ gulp.task('copy:css', ['sass'], function () {
         .pipe(gulp.dest('build/assets/css'));
 });
 
+gulp.task('copy:images', function () {
+    return gulp.src('assets/img/**/*.*')
+        .pipe(gulp.dest('build/assets/img'));
+});
+
 gulp.task('copy:data', function () {
     return gulp.src('data/**/*.*')
         .pipe(gulp.dest('build/data'));
