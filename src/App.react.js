@@ -38,7 +38,7 @@ export default class App extends React.Component {
 
         return (
             <Router history={hashHistory}>
-                <Route path="/" component={Main}>
+                <Route path="/" component={wrapWithDefaultProps(this.state.articles, Main)}>
                     <IndexRoute component={wrapWithDefaultProps(this.state.articles, Home)} />
 
                     <Route path="demo">

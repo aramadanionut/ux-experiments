@@ -30,11 +30,11 @@ export default class Main extends React.Component {
                         <Link to={`/${parentRoute}/dan/${this.props.params.experimentTitle}`} activeClassName="active">dan</Link>
 
                         <div className="avatar-wrapper">
-                            <div className={classNames("avatar", "avatar-left", {"active": this.props.params.user === 'dan'})} 
-                                 style={{backgroundImage: 'url("http://localhost:3000/assets/img/avatar_dan.jpg")'}}></div>
+                            <div className={classNames("avatar", "avatar-left", {"active": this.props.params.user === 'dan'})}
+                                 style={{backgroundImage: `url("${this.props.urlPrefix}/assets/img/avatar_dan.jpg")`}}></div>
 
                             <div className={classNames("avatar", "avatar-right", {"active": this.props.params.user === 'edy'})}
-                                 style={{backgroundImage: 'url("http://localhost:3000/assets/img/avatar_edy.jpg")'}}></div>
+                                 style={{backgroundImage: `url("${this.props.urlPrefix}/assets/img/avatar_edy.jpg")`}}></div>
                         </div>
 
                         <Link to={`/${parentRoute}/edy/${this.props.params.experimentTitle}`} activeClassName="active">edy</Link>
