@@ -30,7 +30,7 @@ gulp.task('copy:data', function () {
 
 gulp.task('prefix', function () {
     gulp.src('build/index.html')
-        .pipe($.prefix('/ux-experiments', null, '/u-experiments'))
+        .pipe($.prefix('/ux-experiments', null, '/ux-experiments'))
         .pipe(gulp.dest('build', { overwrite: true }));
 });
 
