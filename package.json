@@ -8,6 +8,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-load-plugins": "^1.2.4",
+    "gulp-prefix": "0.0.15",
     "gulp-sass": "^2.3.2",
     "react-scripts": "0.2.3"
   },
@@ -27,10 +28,11 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && gulp copy:css copy:data prefix",
     "eject": "react-scripts eject",
     "style": "gulp"
   },
+  "homepage": "https://aramadanionut.github.io/ux-experiments",
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
   }
