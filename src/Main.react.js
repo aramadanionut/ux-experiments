@@ -11,6 +11,7 @@ export default class Main extends React.Component {
         if (this.props.location.pathname !== '/') {
             let routeParts = this.props.location.pathname.split('/').filter(item => !!item);
             let parentRoute = routeParts.splice(0, 1);
+            let switchUser = this.props.params.user === 'dan' ? 'edy' : 'dan';
 
             userSwitcher = (
                 <nav className="footer-nav">
@@ -26,19 +27,19 @@ export default class Main extends React.Component {
                               className="menu-item" activeClassName="active">Demo</Link>
                     </div>
 
-                    <div className="switcher">
-                        <Link to={`/${parentRoute}/dan/${this.props.params.experimentTitle}`} activeClassName="active">dan</Link>
+                    <Link to={`/${parentRoute}/${switchUser}/${this.props.params.experimentTitle}`} className="switcher">
+                        <span className={classNames("user", "user-left", {"active": this.props.params.user === 'dan'})}>dan</span>
 
                         <div className="avatar-wrapper">
-                            <div className={classNames("avatar", "avatar-left", {"active": this.props.params.user === 'dan'})}
+                            <div className={classNames("avatar", "avatar-right", {"active": this.props.params.user === 'dan'})}
                                  style={{backgroundImage: `url("${this.props.urlPrefix}/assets/img/avatar_dan.jpg")`}}></div>
 
-                            <div className={classNames("avatar", "avatar-right", {"active": this.props.params.user === 'edy'})}
+                            <div className={classNames("avatar", "avatar-left", {"active": this.props.params.user === 'edy'})}
                                  style={{backgroundImage: `url("${this.props.urlPrefix}/assets/img/avatar_edy.jpg")`}}></div>
                         </div>
-
-                        <Link to={`/${parentRoute}/edy/${this.props.params.experimentTitle}`} activeClassName="active">edy</Link>
-                    </div>
+                        
+                        <span className={classNames("user", "user-right", {"active": this.props.params.user === 'edy'})}>edy</span>
+                    </Link>
                 </nav>
             );
         }

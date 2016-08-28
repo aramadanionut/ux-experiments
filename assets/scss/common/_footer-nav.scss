@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 0px;
     right: 0;
-    padding: 15px 30px;
+    padding: 20px;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -46,9 +46,17 @@
         float: left;
     }
     .switcher {
+        position: relative;
+        display: inline-block;
         float: right;
+        padding: 0;
         .avatar-wrapper {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
             display: inline-block;
             vertical-align: middle;
             width: 30px;
@@ -68,11 +76,11 @@
                 height: 100%;
                 background-size: cover;
                 background-position: center center;
-                -webkit-transition: all .3s ease;
-                -moz-transition: all .3s ease;
-                -ms-transition: all .3s ease;
-                -o-transition: all .3s ease;
-                transition: all .3s ease;
+                -webkit-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                -moz-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                -ms-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+                -o-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+                transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
                 &.avatar-left {
                     left: -100%;
                 }
@@ -94,6 +102,45 @@
                         -o-transform: translateX(-100%);
                         transform: translateX(-100%);
                     }
+                }
+            }
+        }
+        .user {
+            display: inline-block;
+            padding: 0 15px;
+            height: 30px;
+            line-height: 29px;
+            font-family: Roboto, sans-serif;
+            text-transform: uppercase;
+            background: #f3f3f3;
+            color: #b1b1b1;
+            font-size: 12px;
+            font-weight: 500;
+            -webkit-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -moz-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -ms-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -o-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-decoration: none;
+            &.user-left {
+                padding-right: 24px;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+            &.user-right {
+                padding-left: 24px;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+            &.active {
+                color: white;
+                &.user-left {
+                    background: #de655f;
+                }
+                &.user-right {
+                    background: #45bfbf;
                 }
             }
         }
